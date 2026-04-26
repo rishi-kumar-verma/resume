@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi Kumar Verma - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #2c3e50;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .title {
+            font-size: 1.2em;
+            color: #16a085;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .summary {
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 15px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item a {
+            color: #16a085;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            color: #2c3e50;
+            border-bottom: 2px solid #16a085;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .job, .education, .skill {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #ecf0f1;
+            padding-top: 10px;
+        }
+
+        .job:hover, .education:hover {
+            border-left-color: #16a085;
+            background-color: #f9f9f9;
+            padding: 10px 10px 10px 20px;
+            margin-left: -20px;
+        }
+
+        .job-title, .degree {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company, .university {
+            color: #16a085;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .job-meta, .education-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .job-description, .skill-description {
+            margin-top: 8px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .job-description li, .skill-description li {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #16a085;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skill-category li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #16a085;
+        }
+
+        footer {
+            text-align: center;
+            border-top: 2px solid #ecf0f1;
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .job-meta {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3em; border: 3px solid #2c3e50; font-weight: bold;">RK</div>
+            <h1>Rishi Kumar Verma</h1>
+            <p class="title">Lead Engineer - Full Stack Development</p>
+            <p class="summary">
+                Lead Engineer with 10+ years of experience in full-stack development, cloud-native solutions, and enterprise application delivery. Specialized in React.js, Node.js, AWS, DynamoDB, Elasticsearch, Redis, and modern testing frameworks. Proven ability to optimize performance, design scalable APIs, and mentor teams to deliver high-impact applications across diverse domains.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <a href="tel:+917827305102">+91 7827305102</a>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:rishianand001@gmail.com">rishianand001@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Pune, Maharashtra, India</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://linkedin.com/in/rishi-kumar-verma" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Experience</h2>
+            
+            <div class="job">
+                <div class="job-title">Lead Engineer</div>
+                <div class="company">Brillio</div>
+                <div class="job-meta">
+                    <span>Jan 2023 – Present</span>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Led full-stack development for a Marketing Platform empowering music marketers to design, launch, and manage audience-driven campaigns.</li>
+                        <li>Built features to streamline UGC (User-Generated Content) creation, accelerate campaign workflows, and centralize tools for fan engagement.</li>
+                        <li>Utilized React.js, Node.js, DynamoDB, Builder.io, Elasticsearch, Redis, and AWS services to deliver scalable solutions.</li>
+                        <li>Mentored developers and collaborated across product, design, and backend teams to deliver enterprise-grade applications.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Senior Project Engineer</div>
+                <div class="company">Wipro</div>
+                <div class="job-meta">
+                    <span>Sept 2021 – Jan 2023</span>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Developed a MERN stack CRM system for the banking domain.</li>
+                        <li>Built REST APIs with Node.js/Express and delivered responsive React.js front-end.</li>
+                        <li>Contributed to an Application Risk Management tool, designing and developing dynamic forms to capture data, saving entries to the database, and implementing tabular views with advanced filtering options for risk analysis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Software Engineer</div>
+                <div class="company">Capital Numbers</div>
+                <div class="job-meta">
+                    <span>Oct 2020 – Aug 2021</span>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Built AWS Lambda functions and APIs with API Gateway.</li>
+                        <li>Managed S3 storage and developed React.js components for a multi-vendor e-commerce platform.</li>
+                        <li>Integrated Elasticsearch for product catalog: ensured real-time syncing whenever products were added/updated, and implemented fast, scalable search queries for product discovery.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Senior Software Engineer</div>
+                <div class="company">Chetu India Pvt Ltd</div>
+                <div class="job-meta">
+                    <span>Oct 2018 – Oct 2020</span>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li><strong>Sports Event Management Platform:</strong> Co-developed from scratch. Built roles for coaches, sportspersons, and admins. Coaches could create events requiring admin approval; sportspersons registered, joined events, and communicated via in-app messaging. Built with Angular 7 and Node.js (Express REST API with JWT), deployed on Amazon EC2.</li>
+                        <li><strong>Campaign Management System:</strong> Co-developed from scratch with roles for super admin, client, and influencers. Implemented email template editing, sending to influencers, and social media sharing features. Built with Angular 7 and Node.js (Express REST API with JWT), deployed on Amazon EC2 with S3 storage.</li>
+                        <li><strong>Vending Machine Application:</strong> Handled independently. Implemented product management, stock editing, cart operations, purchase flow, and invoice delivery via text/email. Built with React.js, Socket.io, and Node.js.</li>
+                        <li><strong>Tours & Travels Platform:</strong> Co-developed. Enabled users to customize wish lists, submit forms, and generate leads for admins to schedule callbacks and book packages. Built with React.js.</li>
+                        <li><strong>Construction Management System:</strong> Enhanced and fixed existing application with roles for admin, contractor, company, and customer. Built with React.js and Node.js (Express), deployed on Amazon EC2 with S3 storage.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Web Developer</div>
+                <div class="company">BillionByte IT Solutions</div>
+                <div class="job-meta">
+                    <span>Nov 2014 – Oct 2018</span>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li><strong>Homeandhost.com.au:</strong> Developed a platform for homeowners to create profiles, add properties, and book services like linen delivery/pickup and housecleaning. Implemented promo code functionality, booking workflows, and backend approval systems.</li>
+                        <li><strong>Quickfindout.com:</strong> Built an ad posting site allowing users to register, create multiple ads, and manage subscriptions (1-month free, then 1-year or 2-year plans).</li>
+                        <li>Contributed to projects including bestforbuyers.com, maandna.com, and Google keyword ranking optimization.</li>
+                        <li>Role included software development, maintenance, database design, and package development as part of a collaborative team.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            
+            <div class="education">
+                <div class="degree">B.Tech in Information Technology</div>
+                <div class="university">Hindustan College of Science & Technology, Mathura</div>
+                <div class="education-meta">
+                    <span>2013</span>
+                </div>
+            </div>
+
+            <div class="education">
+                <div class="degree">Class XII (UP Board)</div>
+                <div class="university">G.C.S.L. Inter College, Burhwan, Fatehpur</div>
+                <div class="education-meta">
+                    <span>2007</span>
+                </div>
+            </div>
+
+            <div class="education">
+                <div class="degree">Class X (UP Board)</div>
+                <div class="university">B.P.D.C.U. Inter College, Amauli, Fatehpur</div>
+                <div class="education-meta">
+                    <span>2005</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul>
+                        <li>React.js</li>
+                        <li>Angular 7/8</li>
+                        <li>TypeScript</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>HTML & CSS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>REST APIs</li>
+                        <li>Socket.io</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS (EC2, Lambda, API Gateway, S3)</li>
+                        <li>Builder.io</li>
+                        <li>Cloud-native architecture</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Databases & Tools</h3>
+                    <ul>
+                        <li>DynamoDB</li>
+                        <li>MongoDB</li>
+                        <li>MySQL & PostgreSQL</li>
+                        <li>Elasticsearch</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Testing & Security</h3>
+                    <ul>
+                        <li>Jest</li>
+                        <li>JWT Authentication</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Collaboration</h3>
+                    <ul>
+                        <li>Agile (Scrum/Kanban)</li>
+                        <li>Team Mentoring</li>
+                        <li>Cross-functional Teamwork</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 by Rishi Kumar Verma. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
