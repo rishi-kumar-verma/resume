@@ -227,10 +227,25 @@
                 box-shadow: none;
                 padding: 0;
             }
+            /* Avoid breaking important blocks across pages */
+            header, section, .job, .education, .skill, .skill-category, .contact-info {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                -webkit-column-break-inside: avoid;
+                -webkit-region-break-inside: avoid;
+            }
+            /* Allow footer to appear at bottom of last page */
+            footer { page-break-after: auto; }
         }
     </style>
 </head>
 <body>
+    <div class="top-actions" style="background:#2c3e50;color:white;padding:10px 0;text-align:center;">
+        <div style="max-width:900px;margin:0 auto;display:flex;gap:12px;justify-content:center;align-items:center;">
+            <a id="download-pdf" href="#" style="background:#16a085;color:white;padding:8px 12px;border-radius:4px;text-decoration:none;font-weight:600;">Download PDF</a>
+            <a href="https://rishi-kumar-verma.github.io/resume/" target="_blank" rel="noopener" style="background:#ffffff;color:#2c3e50;padding:8px 12px;border-radius:4px;text-decoration:none;font-weight:600;">Open on GitHub Pages</a>
+        </div>
+    </div>
     <div class="container">
         <header>
             <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3em; border: 3px solid #2c3e50; font-weight: bold;">RK</div>
@@ -438,5 +453,36 @@
             <p>© 2025 by Rishi Kumar Verma. All rights reserved.</p>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script>
+        (function(){
+            const btn = document.getElementById('download-pdf');
+            if (!btn) return;
+            btn.addEventListener('click', async function(e){
+                e.preventDefault();
+                const originalText = btn.textContent;
+                btn.textContent = 'Generating...';
+                btn.style.pointerEvents = 'none';
+                try {
+                    const element = document.querySelector('.container');
+                    const opt = {
+                        margin: 0.4,
+                        filename: 'Rishi-Kumar-Verma-Resume.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { scale: 2, useCORS: true },
+                        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+                        pagebreak: { mode: ['css', 'legacy'], avoid: ['.job', '.education', '.skill-category', 'header', 'section'] }
+                    };
+                    await html2pdf().set(opt).from(element).save();
+                } catch (err) {
+                    console.error('PDF generation failed', err);
+                    alert('PDF generation failed — check console for details.');
+                } finally {
+                    btn.textContent = originalText;
+                    btn.style.pointerEvents = '';
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
